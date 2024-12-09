@@ -3,24 +3,6 @@ terraform-alicloud-arms
 
 本 Module 用于在阿里云创建 [应用实时监控服务(ARMS)](https://help.aliyun.com/product/34364.html) 报警分组和规则.
 
-本 Module 支持创建以下资源:
-
-* [ARMS联系人分组(Arms_Alert_Contact_Group)](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/arms_alert_contact_group)
-* [ARMS报警规则(Arms_Dispatch_Rule)](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/arms_dispatch_rule)
-
-## 版本要求
-
-| Name | Version |
-|------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13.0 |
-| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | >= 1.131.0 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_alicloud"></a> [alicloud](#provider\_alicloud) | >= 1.131.0 |
-
 ## 用法
 
 ```hcl
@@ -35,6 +17,57 @@ module "example" {
   match_expressions = [{key="aliyun_arms_involvedObject_kind",value= "app",operator = "eq"}]
 }
 ```
+
+<!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
+| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | >= 1.237.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_alicloud"></a> [alicloud](#provider\_alicloud) | >= 1.237.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [alicloud_arms_alert_contact_group.arms_alert_contact_group](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/arms_alert_contact_group) | resource |
+| [alicloud_arms_dispatch_rule.arms_dispatch_rule](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/arms_dispatch_rule) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_alert_contact_group_name"></a> [alert\_contact\_group\_name](#input\_alert\_contact\_group\_name) | The name of arms contract group. | `string` | `null` | no |
+| <a name="input_contact_ids"></a> [contact\_ids](#input\_contact\_ids) | The ids of arms contract. | `list(string)` | n/a | yes |
+| <a name="input_create"></a> [create](#input\_create) | Whether to create resources in module. | `bool` | `false` | no |
+| <a name="input_dispatch_rule_name"></a> [dispatch\_rule\_name](#input\_dispatch\_rule\_name) | The rule name of dispatch. | `string` | `null` | no |
+| <a name="input_dispatch_type"></a> [dispatch\_type](#input\_dispatch\_type) | The type of dispatch. | `string` | `"CREATE_ALERT"` | no |
+| <a name="input_group_interval"></a> [group\_interval](#input\_group\_interval) | The interval time of arms contract group. | `number` | `null` | no |
+| <a name="input_group_wait_time"></a> [group\_wait\_time](#input\_group\_wait\_time) | The waiting time of arms contract group. | `number` | `null` | no |
+| <a name="input_grouping_fields"></a> [grouping\_fields](#input\_grouping\_fields) | The files of arms contract group. | `list(string)` | <pre>[<br>  "alertname"<br>]</pre> | no |
+| <a name="input_match_expressions"></a> [match\_expressions](#input\_match\_expressions) | The lable of match expresoins. | <pre>list(object({<br>    key      = string<br>    value    = string<br>    operator = string<br>  }))</pre> | n/a | yes |
+| <a name="input_notification_name"></a> [notification\_name](#input\_notification\_name) | The name of arms notification. | `string` | `null` | no |
+| <a name="input_notify_channels"></a> [notify\_channels](#input\_notify\_channels) | The name of arms notification. | `list(string)` | <pre>[<br>  "dingTalk",<br>  "wechat"<br>]</pre> | no |
+| <a name="input_notify_end_time"></a> [notify\_end\_time](#input\_notify\_end\_time) | The end time of arms notification. | `string` | `null` | no |
+| <a name="input_notify_start_time"></a> [notify\_start\_time](#input\_notify\_start\_time) | The start time of arms notification. | `string` | `null` | no |
+| <a name="input_repeat_interval"></a> [repeat\_interval](#input\_repeat\_interval) | The repeat interval time of arms contract group. | `number` | `null` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_this_arms_dispatch_rule"></a> [this\_arms\_dispatch\_rule](#output\_this\_arms\_dispatch\_rule) | The dispatch rule ID of arms. |
+<!-- END_TF_DOCS -->
 
 提交问题
 ------

@@ -29,10 +29,12 @@ resource "alicloud_arms_dispatch_rule" "arms_dispatch_rule" {
 
   notify_rules {
     notify_objects {
-      notify_object_id = alicloud_arms_alert_contact_group.arms_alert_contact_group.0.id
+      notify_object_id = alicloud_arms_alert_contact_group.arms_alert_contact_group[0].id
       notify_type      = "ARMS_CONTACT_GROUP"
       name             = var.notification_name
     }
-    notify_channels = var.notify_channels
+    notify_channels   = var.notify_channels
+    notify_start_time = var.notify_start_time
+    notify_end_time   = var.notify_end_time
   }
 }
