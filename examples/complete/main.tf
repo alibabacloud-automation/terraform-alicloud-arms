@@ -4,14 +4,16 @@ resource "alicloud_arms_alert_contact" "default" {
 }
 
 module "example" {
-  source = "../.."
-  contact_ids = [alicloud_arms_alert_contact.default.id]
-  match_expressions = [{key="aliyun_arms_involvedObject_kind",value= "app",operator = "eq"}]
-  create = true
+  source                   = "../.."
+  contact_ids              = [alicloud_arms_alert_contact.default.id]
+  match_expressions        = [{ key = "aliyun_arms_involvedObject_kind", value = "app", operator = "eq" }]
+  create                   = true
   alert_contact_group_name = "tf-arms-contract-group-name"
-  dispatch_rule_name = "tf-dispatch-rule-name"
-  group_wait_time = 5
-  group_interval = 15
-  repeat_interval = 100
-  notification_name = "tf-arms-notification"
+  dispatch_rule_name       = "tf-dispatch-rule-name"
+  group_wait_time          = 5
+  group_interval           = 15
+  repeat_interval          = 100
+  notification_name        = "tf-arms-notification"
+  notify_start_time        = "00:00"
+  notify_end_time          = "23:59"
 }

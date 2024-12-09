@@ -68,6 +68,17 @@ variable "notify_channels" {
   default     = ["dingTalk", "wechat"]
 }
 
+variable "notify_start_time" {
+  description = "The start time of arms notification."
+  type        = string
+  default     = null
+}
+variable "notify_end_time" {
+  description = "The end time of arms notification."
+  type        = string
+  default     = null
+}
+
 variable "create" {
   description = "Whether to create resources in module."
   type        = bool
