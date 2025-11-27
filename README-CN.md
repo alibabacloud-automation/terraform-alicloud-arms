@@ -5,6 +5,12 @@ terraform-alicloud-arms
 
 ## 用法
 
+<div style="display: block;margin-bottom: 40px;"><div class="oics-button" style="float: right;position: absolute;margin-bottom: 10px;">
+  <a href="https://api.aliyun.com/terraform?source=Module&activeTab=document&sourcePath=terraform-alicloud-modules%3A%3Aarms&spm=docs.m.terraform-alicloud-modules.arms" target="_blank">
+    <img alt="Open in AliCloud" src="https://img.alicdn.com/imgextra/i1/O1CN01hjjqXv1uYUlY56FyX_!!6000000006049-55-tps-254-36.svg" style="max-height: 44px; max-width: 100%;">
+  </a>
+</div></div>
+
 ```hcl
 resource "alicloud_arms_alert_contact" "default" {
   alert_contact_name = "example_value"
