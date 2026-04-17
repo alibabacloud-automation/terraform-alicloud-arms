@@ -30,13 +30,13 @@ module "example" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.13 |
-| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | >= 1.237.0 |
+| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | >= 1.200.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_alicloud"></a> [alicloud](#provider\_alicloud) | >= 1.237.0 |
+| <a name="provider_alicloud"></a> [alicloud](#provider\_alicloud) | >= 1.200.0 |
 
 ## Modules
 
@@ -46,8 +46,8 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [alicloud_arms_alert_contact_group.arms_alert_contact_group](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/arms_alert_contact_group) | resource |
-| [alicloud_arms_dispatch_rule.arms_dispatch_rule](https://registry.terraform.io/providers/hashicorp/alicloud/latest/docs/resources/arms_dispatch_rule) | resource |
+| [alicloud_arms_alert_contact_group.arms_alert_contact_group](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/arms_alert_contact_group) | resource |
+| [alicloud_arms_dispatch_rule.arms_dispatch_rule](https://registry.terraform.io/providers/aliyun/alicloud/latest/docs/resources/arms_dispatch_rule) | resource |
 
 ## Inputs
 
@@ -60,10 +60,10 @@ No modules.
 | <a name="input_dispatch_type"></a> [dispatch\_type](#input\_dispatch\_type) | The type of dispatch. | `string` | `"CREATE_ALERT"` | no |
 | <a name="input_group_interval"></a> [group\_interval](#input\_group\_interval) | The interval time of arms contract group. | `number` | `null` | no |
 | <a name="input_group_wait_time"></a> [group\_wait\_time](#input\_group\_wait\_time) | The waiting time of arms contract group. | `number` | `null` | no |
-| <a name="input_grouping_fields"></a> [grouping\_fields](#input\_grouping\_fields) | The files of arms contract group. | `list(string)` | <pre>[<br>  "alertname"<br>]</pre> | no |
-| <a name="input_match_expressions"></a> [match\_expressions](#input\_match\_expressions) | The lable of match expresoins. | <pre>list(object({<br>    key      = string<br>    value    = string<br>    operator = string<br>  }))</pre> | n/a | yes |
+| <a name="input_grouping_fields"></a> [grouping\_fields](#input\_grouping\_fields) | The files of arms contract group. | `list(string)` | <pre>[<br/>  "alertname"<br/>]</pre> | no |
+| <a name="input_match_expressions"></a> [match\_expressions](#input\_match\_expressions) | The lable of match expresoins. | <pre>list(object({<br/>    key      = string<br/>    value    = string<br/>    operator = string<br/>  }))</pre> | n/a | yes |
 | <a name="input_notification_name"></a> [notification\_name](#input\_notification\_name) | The name of arms notification. | `string` | `null` | no |
-| <a name="input_notify_channels"></a> [notify\_channels](#input\_notify\_channels) | The name of arms notification. | `list(string)` | <pre>[<br>  "dingTalk",<br>  "wechat"<br>]</pre> | no |
+| <a name="input_notify_channels"></a> [notify\_channels](#input\_notify\_channels) | The name of arms notification. | `list(string)` | <pre>[<br/>  "dingTalk",<br/>  "wechat"<br/>]</pre> | no |
 | <a name="input_notify_end_time"></a> [notify\_end\_time](#input\_notify\_end\_time) | The end time of arms notification. | `string` | `null` | no |
 | <a name="input_notify_start_time"></a> [notify\_start\_time](#input\_notify\_start\_time) | The start time of arms notification. | `string` | `null` | no |
 | <a name="input_repeat_interval"></a> [repeat\_interval](#input\_repeat\_interval) | The repeat interval time of arms contract group. | `number` | `null` | no |
